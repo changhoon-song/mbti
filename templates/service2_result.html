@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Prediction</title>
+    <style>
+        body {
+            background-image: url('https://png.pngtree.com/background/20210716/original/pngtree-romantic-cosmic-background-picture-image_1337153.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0; /* body의 기본 마진 제거 */
+            padding: 0; /* body의 기본 패딩 제거 */
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: blue;
+            font-family: '맑은 고딕', sans-serif;
+        }
+
+        #result {
+            text-align: center;
+            color: red;
+            font-size: 40px;
+        }
+
+        .scroll-table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 800px;
+            margin: 0 auto;
+            height: 400px;
+        }
+
+        th, td {
+            border: 1px solid #D2D1D5;
+            padding: 8px;
+            color: #D2D1D5;
+        }
+
+        th {
+            background-color: #342F44;
+            color: white;
+            height: 50px;
+            font-size: 24px;
+        }
+
+        th:first-child {
+            width: 400px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #2e2649;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #423b5b;
+        }
+
+        .noBorder {
+            border: none !important;
+        }
+
+        .second-table {
+            width: 800px;
+            margin: 20px auto; /* 테이블과 간격 조절 */
+            height: 400px;
+        }
+
+        .second-table tr, .second-table td {
+            width: 25%;
+            text-align: center;
+        }
+
+        .second-table a {
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+        }
+        
+
+        .large-link {
+                    font-style: inherit;
+                   
+                    
+
+
+                    font-size: 25px; /* Adjust the font size as needed */
+
+}
+
+/* Add this CSS code to your stylesheet */
+.personality-types a {
+    color: white; /* Change the color code to your desired color */
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="scroll-table-container">
+            <table style="width: 400px;"> <!-- 가로 크기 조절 -->
+                <thead>
+                    <tr>
+                        <th>Your Personality Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="height: 20px;"> <!-- 2번째 행 크기 조절 -->
+                        <td id="result" style="color: yellow;">{{ y_pred_result }}</td> <!-- 글자 색상을 노란색으로 설정 -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <br>
+        
+    </div>
+
+    <div class="container">
+        <div class="scroll-table-container">
+            <table class="second-table personality-types">
+                <tr>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-intj">INTJ</a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-intp"> INTP    </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-entj"> ENTJ    </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-entp"> ENTP     </a></td>
+                </tr>
+                <tr>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-infj"> INFJ     </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-infp"> INFP     </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-enfj"> ENFJ     </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-enfp"> ENFP     </a></td>
+                </tr>
+                <tr>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-istj"> ISTJ     </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-isfj"> ISFJ     </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-estp"> ESTP     </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-esfj"> ESFJ     </a></td>
+                </tr>
+                <tr>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-istp"> ISTP    </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-isfp"> ISFP   </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-estj"> ESTJ   </a></td>
+                    <td><a class="large-link" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-esfp"> ESFP    </a></td>
+                </tr>
+            </table>
+            <a href="/">[FRONT PAGE]</a>
+        </div>
+    </div>
+</body>
+</html>

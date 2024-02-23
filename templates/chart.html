@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 스타일 추가 */
+        .footer {
+            text-align: right;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 10px;
+            font-size: 20px;
+        }
+        .three h2 {
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 1.5em;
+            padding-bottom: 15px;
+            position: relative;
+        }
+        .three h2:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 5px;
+            width: 55px;
+            background-color: #111;
+        }
+        .three h2:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            height: 1px;
+            width: 95%;
+            max-width: 255px;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Classification & Analysis</h1>
+    <br><br><br>
+    
+    <div class="three">
+        <h2 style="text-align: center; font-size: 50px;">The amount of information posted for each type</h2>
+    </div>
+    <div style="text-align: center;">
+        <img src="/static/images/Figure2.png" alt="이미지 설명" style="max-width: 100%;">
+    </div>
+    <br><br><br>
+
+    <div class="three">
+        <h2 style="text-align: center; font-size: 50px;">WorldCloud for each type</h2>
+    </div>
+    <br><br><br>
+    <div style="text-align: center;">
+        <img src="/static/images/Mbtiworldcloud.jpg" alt="이미지 설명" style="max-width: 100%;">
+    </div>
+    <br><br><br>
+    
+    <div class="three">
+        <h2 style="text-align: center; font-size: 50px;">Pie Chart for I/E, S/N, F/T, P/J</h2>
+    </div>
+    <div class="three"></div>
+    <div style="text-align: center;">
+        <img src="/static/images/pie2.png" alt="이미지 설명" style="max-width: 100%;">
+    </div>
+    <a href='/service2', class="footer"> NEXTPAGE > </a>
+</body>
+</html>
