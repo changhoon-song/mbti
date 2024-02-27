@@ -26,7 +26,7 @@ def service2_result():
     texts = request.form['texts']      
     
     # 텍스트분류 모델 import 
-    from mbti_final2 import classifier      
+    from mbti_pred import classifier      
     y_pred_result = classifier(texts)  
     
     return render_template('/service2_result.html',
